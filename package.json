@@ -1,6 +1,6 @@
 {
   "name": "repo-clean",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Clean common build and cache folders from a repository.",
   "license": "MIT",
   "bin": {
@@ -10,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/arbenkryemadhi/repo-clean.git"
   },
-  "keywords": [],
+  "keywords": [
+    "clean",
+    "cleanup",
+    "cache",
+    "build",
+    "repository",
+    "cli",
+    "node-modules",
+    "monorepo"
+  ],
   "author": "Arben Kryemadhi",
   "type": "commonjs",
   "bugs": {

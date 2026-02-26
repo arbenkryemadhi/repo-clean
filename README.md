@@ -22,8 +22,9 @@ repo-clean
 Use the command patterns below with either `npx repo-clean` or `repo-clean` (after global install).
 
 ```bash
-repo-clean [--dry-run] [--node-modules] [--pm-cache] [--logs] [--editor] [--tmp]
+repo-clean [--dry-run] [--node-modules] [--pm-cache] [--logs] [--editor] [--tmp] [--force]
 repo-clean --all [--keep-nm] [--dry-run]
+repo-clean --version | -v
 ```
 
 ### Default behavior (no flags)
@@ -43,6 +44,7 @@ Removes:
 
 - `--dry-run` Print what would be removed without deleting anything.
 - `--node-modules` Also remove `node_modules`.
+- `--force` Skip confirmation prompt for `node_modules` removal.
 - `--pm-cache` Also remove package manager caches/stores:
   - `.yarn/cache`
   - `.yarn/unplugged`
@@ -59,6 +61,7 @@ Removes:
 - `--tmp` Also remove `tmp` and `temp`.
 - `--all` Include all optional cleanup categories above.
 - `--keep-nm` With `--all`, keep `node_modules`.
+- `--version`, `-v` Print the CLI version.
 
 ## Examples
 
@@ -67,10 +70,16 @@ Removes:
 npx repo-clean --dry-run
 
 # Remove default targets + node_modules
+npx repo-clean --node-modules --force
+
+# Prompted node_modules removal (confirm with y/yes)
 npx repo-clean --node-modules
 
 # Full cleanup except node_modules
 npx repo-clean --all --keep-nm
+
+# Print installed version
+npx repo-clean --version
 ```
 
 ## Issues and Support

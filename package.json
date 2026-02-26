@@ -1,21 +1,26 @@
 {
   "name": "repo-clean",
   "version": "1.0.0",
-  "description": "",
+  "description": "Clean common build and cache folders from a repository.",
+  "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "repo-clean": "bin/repo-clean.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arbenkryemadhi/repo-clean.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Arben Kryemadhi",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/arbenkryemadhi/repo-clean/issues"
   },
-  "homepage": "https://github.com/arbenkryemadhi/repo-clean#readme"
+  "homepage": "https://github.com/arbenkryemadhi/repo-clean#readme",
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ]
 }

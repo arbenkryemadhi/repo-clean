@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Clean common build and cache folders from a repository.",
   "license": "MIT",
-  "main": "index.js",
   "bin": {
     "repo-clean": "bin/repo-clean.js"
   },

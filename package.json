@@ -20,6 +20,9 @@
   ],
   "author": "Arben Kryemadhi",
   "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
   "bugs": {
     "url": "https://github.com/arbenkryemadhi/repo-clean/issues"
   },

@@ -110,6 +110,7 @@ Contributions are welcome.
 ```bash
 git clone https://github.com/arbenkryemadhi/repo-clean.git
 cd repo-clean
+npm test
 node ./bin/repo-clean.js --help
 node ./bin/repo-clean.js --dry-run
 ```

@@ -62,3 +62,42 @@ npx repo-clean --all --keep-nm
 npm i -g repo-clean
 repo-clean --help
 ```
+
+## Issues and Support
+
+- Bug reports: https://github.com/arbenkryemadhi/repo-clean/issues/new
+- Feature requests: https://github.com/arbenkryemadhi/repo-clean/issues/new
+- General issues: https://github.com/arbenkryemadhi/repo-clean/issues
+
+When opening an issue, include:
+
+- Your OS and Node.js version
+- The exact command you ran
+- The output you expected vs the output you got
+- A minimal repo structure that reproduces the behavior (if possible)
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a branch for your change.
+3. Make focused changes and update docs when behavior changes.
+4. Test with `--dry-run` and relevant flags.
+5. Open a pull request with a clear description.
+
+### Local development
+
+```bash
+git clone https://github.com/arbenkryemadhi/repo-clean.git
+cd repo-clean
+node ./bin/repo-clean.js --help
+node ./bin/repo-clean.js --dry-run
+```
+
+### Pull request checklist
+
+- Keep scope small and focused.
+- Preserve existing CLI behavior unless intentionally changing it.
+- Update README for any user-facing flag or behavior changes.
+- Add reproducible steps in the PR description.

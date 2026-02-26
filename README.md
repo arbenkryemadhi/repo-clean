@@ -2,7 +2,24 @@
 
 Clean common build outputs and cache folders from a repository.
 
+## Quick Start
+
+No installation needed! Run it directly with `npx`:
+
+```bash
+npx repo-clean
+```
+
+Or you can install it globally:
+
+```bash
+npm i -g repo-clean
+repo-clean
+```
+
 ## Usage
+
+Use the command patterns below with either `npx repo-clean` or `repo-clean` (after global install).
 
 ```bash
 repo-clean [--dry-run] [--node-modules] [--pm-cache] [--logs] [--editor] [--tmp]
@@ -54,13 +71,6 @@ npx repo-clean --node-modules
 
 # Full cleanup except node_modules
 npx repo-clean --all --keep-nm
-```
-
-## Install
-
-```bash
-npm i -g repo-clean
-repo-clean --help
 ```
 
 ## Issues and Support

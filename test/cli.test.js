@@ -213,6 +213,15 @@ test("unknown flag wins over version", () => {
   assert.notEqual(result.stdout.trim(), pkg.version);
 });
 
+test("unknown flag wins over positional argument", () => {
+  const repo = mkRepo();
+  const result = runCli({ repo, args: ["--dr-run", "some-positional-arg"] });
+
+  assert.equal(result.status, 2);
+  assert.match(result.stderr, /Unknown flag/);
+  assert.doesNotMatch(result.stderr, /Unexpected positional/);
+});
+
 test("--keep-nm alone does not include node_modules", () => {
   const repo = mkRepo();
   makePath(repo, "node_modules");
@@ -379,12 +388,30 @@ test("duplicate flags do not change behavior", () => {
   assert.match(result.stdout, /done \(dry-run\)/);
 });
 
-test("non-flag argument is ignored", () => {
+test("non-flag argument is rejected", () => {
   const repo = mkRepo();
   makePath(repo, "dist");
 
   const result = runCli({ repo, args: ["some-positional-arg"] });
 
-  assert.equal(result.status, 0);
-  assert.equal(exists(repo, "dist"), false);
+  assert.equal(result.status, 2);
+  assert.equal(exists(repo, "dist"), true);
+  assert.match(
+    result.stderr,
+    /Unexpected positional argument: some-positional-arg/,
+  );
+});
+
+test("multiple positional arguments are reported together", () => {
+  const repo = mkRepo();
+  const result = runCli({
+    repo,
+    args: ["first-positional", "second-positional"],
+  });
+
+  assert.equal(result.status, 2);
+  assert.match(
+    result.stderr,
+    /Unexpected positional arguments: first-positional, second-positional/,
+  );
 });

@@ -24,8 +24,11 @@ Use the command patterns below with either `npx repo-clean` or `repo-clean` (aft
 ```bash
 repo-clean [--dry-run] [--node-modules] [--pm-cache] [--logs] [--editor] [--tmp] [--force]
 repo-clean --all [--keep-nm] [--dry-run]
+repo-clean --help | -h
 repo-clean --version | -v
 ```
+
+`repo-clean` accepts flags only. Positional arguments are rejected with an error.
 
 ### Default behavior (no flags)
 
@@ -61,6 +64,7 @@ Removes:
 - `--tmp` Also remove `tmp` and `temp`.
 - `--all` Include all optional cleanup categories above.
 - `--keep-nm` With `--all`, keep `node_modules`.
+- `--help`, `-h` Print usage and flags.
 - `--version`, `-v` Print the CLI version.
 
 ## Examples
@@ -80,6 +84,9 @@ npx repo-clean --all --keep-nm
 
 # Print installed version
 npx repo-clean --version
+
+# Invalid (positional argument): exits with code 2
+npx repo-clean my-folder
 ```
 
 ## Issues and Support

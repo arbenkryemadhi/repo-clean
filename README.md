@@ -23,7 +23,7 @@ Use the command patterns below with either `npx repo-clean` or `repo-clean` (aft
 
 ```bash
 repo-clean [--dry-run] [--node-modules] [--pm-cache] [--logs] [--editor] [--tmp] [--force]
-repo-clean --all [--keep-nm] [--dry-run]
+repo-clean --all [--keep-nm] [--dry-run] [--force]
 repo-clean --help | -h
 repo-clean --version | -v
 ```
